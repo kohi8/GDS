@@ -51,13 +51,14 @@ namespace CBG
             this.tmrGameTick.Interval = 1;
             this.tmrGameTick.Tick += new System.EventHandler(this.tmrGameTick_Tick);
             // 
-            // Form1
+            // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pbGameScreen);
-            this.Name = "Form1";
+            this.Name = "frmGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Breaking Ballz";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

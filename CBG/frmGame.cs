@@ -73,8 +73,10 @@ namespace CBG
         #endregion
 
         #region UI & Paint / update driver
-        public frmGame()
+        Form MainMenu;
+        public frmGame(Form MainMenu)
         {
+            this.MainMenu = MainMenu;
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -139,10 +141,10 @@ namespace CBG
             // Game Parameters
             PlayerSpeedLimit = 500;
             EnemySpeedLimit = 500;
-            WinningDistance = 30;
+            WinningDistance = 20;
 
-            EnemyPosition = new PointF(100, 100);
-            PlayerPosition = new PointF(0, 0);
+            EnemyPosition = new PointF(400, 0);
+            PlayerPosition = new PointF(400, 225);
 
             
             // Reset game state
@@ -202,10 +204,25 @@ namespace CBG
                 }
                 else
                 {
-                    Application.Exit();
+                    Hide();
+                    MainMenu.Show();
                 }
             }
+
             // Do something else here
+
+            /*
+            // eg, a new level idea
+            BallSize.Height = 20 + 10 * (float)Math.Sin(totalTime * 12);
+            BallSize.Width= 20 + 10 * (float)Math.Sin(totalTime * 12);
+            WinningDistance = 20 + 10 * (float)Math.Sin(totalTime * 12);
+
+            BallCenter.Height = BallSize.Height / 2;
+            BallCenter.Width = BallSize.Width / 2;
+
+            pbGameScreen.BackColor = Color.FromArgb((int)(100 + 50 * Math.Sin(totalTime * 12)), (int)(100 + 50 * Math.Sin(totalTime * 92)), (int)(100 + 50 * Math.Sin(totalTime * 2)));
+            */
+             
         }
         #endregion
 
